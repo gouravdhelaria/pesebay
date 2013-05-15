@@ -2,7 +2,7 @@
 
 Online Book Transaction Site.
 
-# Craeted By.
+# Created By.
 
 1. Bhimsen S.K
 2. Gourav Dhelaria
