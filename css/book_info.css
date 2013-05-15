@@ -1,0 +1,181 @@
+            body{
+                font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+            }
+            div.book_header, div.author , div.price{
+/*		max-width: 500px;
+  */              font-family:  ‘Lucida Console’, Monaco, monospace;
+                color: #333333;
+            }
+	    div.author {
+		position: relative;
+		top:-5px;
+	    }
+            div.info{
+                margin-left: 170px;
+                margin-bottom: 10px;
+                margin-top: 5px;
+/*                width: 56%;
+                width: 70%;
+                height: 30%;
+                max-height: 100%;
+   */             position:relative;                
+                border:1px dotted #ccc;
+            }
+            div.book_info{
+                position:relative;
+                left:20px;
+                /*border: 1px solid red;*/
+                min-height: 200px;             
+ /*               max-width: 500px;
+   */         }
+            div.links{
+	       height: 30px;
+	       padding: 15px;
+	       position: relative;
+            }
+	    /*sid */
+	    span.rating_stars{
+	    	position:relative;
+		top:-15px;
+	    }
+	    span.add_to_cart{
+		position: relative;
+	    }
+	    div.imageHolder{
+		height:140px;
+		width:100%;
+		margin-top:10px;
+	    }
+	    #arrowleftcontainer{
+	    	position: relative;
+	    	top:75px;
+	    	left:-20px;
+	    	
+	    }
+	    #arrowleft{
+	    	height:0px;
+	    	width:0px;
+	    	border:10px solid #ccc;
+	    	border-left-color: transparent;
+	    	border-top-color: transparent;
+	    	border-bottom-color: transparent;
+	    	position: absolute;
+	    }
+	    #arrowleftoverlapping{
+	    	height:0px;
+	    	width:0px;
+	    	padding-left:1px;
+	    	border:10px solid white;
+	    	border-left-color: transparent;
+	    	border-top-color: transparent;
+	    	border-bottom-color: transparent;
+	    	position: absolute;
+	    }
+	    #detailsContainer{
+	    	z-index:1000;
+	    	background-color:white;
+	    	display: none;
+	    	width:410px;
+	    	margin-top: 10px;
+	    	margin-bottom: 30px;
+	    	position: absolute;
+	    	box-shadow: 5px 5px 10px #888888;
+	    	border:1px solid #ccc;
+/*	    	max-height: 500px;*/
+	    	border-radius:5px;
+		-moz-border-radius:5px; /* Firefox 3.6 and earlier */
+	    }
+	    #details{
+	    	padding:10px;
+	    	position: relative;
+	    	top:-25px;
+		min-height: 200px;
+	    }
+	    #loading{
+	    	display: none;
+	    	height:60px;
+	    	margin-left: 100px;
+	    	margin-top: 60px;
+
+	    }
+	    #detailsHeader{
+	    	min-height:40px;
+	    	padding:20px;
+	    }
+	    #detailsImg{
+	    	height:200px;
+	    	width:200px;
+	    	position:relative;
+	    	left:100px;
+	    	border:1px solid #ccc;
+	    }
+	    #detailsDescription{
+	    	/*max-height: 230px;*/
+	    	position: relative;
+	    	top: -10px;
+	    }
+	    #detailsRating{
+	    	position: relative;
+	    	left: 195px;
+	    	top: 20px;
+	    	width: 190px;
+	    }
+	    #detailsRate{
+	    	position: relative;
+	    	left: 30px;
+	    	top: 10px;
+	    	height:0px;
+	    	width: 300px;
+	    }
+	    #detailsAuthor{
+	    	position: relative;
+	    	left: 10px;
+	    	width: 280px;
+	    	
+	    }
+	    #detailsPrice{
+	    	position: relative;
+	    	top:-10px;
+	    }
+	    #detailsPrice_mp,#detailsPrice_sp,#detailsPrice_dp{
+	    	width:160px;
+	    	font-weight:bold;
+	    	margin-left:10px;
+	    }
+	    #detailsDesc{
+	    	max-height:160px;
+	    	margin-left: 10px;
+	    	margin-bottom: 10px;
+	    	margin-top: 10px;
+	    	overflow: hidden;
+	    }
+	    #recommendationsContainer{
+	    	border: 1px dotted #ccc;
+	    	position: absolute; 
+	    	margin-top: 10px;
+	    	padding: 10px;
+	    }	    
+	    #recommendationsHeader,#recommendationsContent{
+	    	padding: 20px;
+	    }	    
+
+	    div.left_block{
+		border:1px dotted #ccc;
+		margin-top:10px;
+		padding:5px;
+                margin-bottom:10px;
+	    }
+	    div.left_block:hover{
+	    	cursor: pointer;
+	    }
+            div.info ol{
+                list-style: none;
+            }
+            div.author div+div{
+                position: relative;
+                top: -18px;
+                left: 62px;
+            }
+            div.mprice > span + span, div.sprice > span + span, div.discount > span + span{
+                margin-left:5px;
+            }

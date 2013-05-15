@@ -1,0 +1,14 @@
+ <?php
+require_once( "../db.php" );
+require_once( "../transaction.php" );
+
+  $books = $_POST['books'];
+  $transid = $_POST['transid'];
+  $db = Database::connect();
+
+  for($i=0;$i<count($books);$i++){
+  	Transaction::updateInstore( $db, $transid[$i], $books[$i] );
+  
+  }
+  
+   ?>

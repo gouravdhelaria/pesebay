@@ -1,0 +1,13 @@
+th,td{
+    text-align: left;
+    padding: 0 20px;
+}
+th.item, td.item{
+	width: 120px;
+}
+th.author, td.author{
+	width: 200px;
+}
+div#space{
+    height:150px;
+}

@@ -1,0 +1,50 @@
+The Haskel Road to Logic,Maths, and programming
+C Programming
+Creating Applications with mozilla
+Think Python: An Introduction to Software Design
+Real World Haskel
+Making Games with Python and Pygame
+Swing, 2nd Edition
+Perl 5 Tutorial
+Java Distributed Computing
+Optimizing C++
+PHP 5 Power Programming
+PHP Essentials
+Python 101: Introduction to Python
+The Common Java Cookbook
+PHP Security Guide
+Finite-state Automate in Java
+The Art and Science of SmallTalk
+Programming Pearls, 2nd Edition
+Git Magic
+Ruby Best Pictures
+Essential Javascript and jQuery Design Patterns
+The Software Developement Book
+A Byte of Python
+Rails in a Nutshell
+Learn Prolog Now
+Matters Computational: Ideas, Algorithms, Source Code
+The Java Game Developement Tutorial
+Begining Pearl
+Python 2.5 Quick Reference
+Scala Style Guide
+Software Developement Guidelines
+The Scheme Programming Language
+Mastering C++
+Natural Language Processing in Lisp
+A Little C Primer
+Java in a Nutshell
+Software Design Using C++
+Quick Ada
+Ada Distilled
+Free Java Book
+Python Standard Library
+Basic Programming
+Using Visual Basic 6
+Text Algorithms
+Prolog Programming
+Practical PHP Programming
+Interactive Programming in Java
+C++ Programming for Scientists
+Java:Classes in Java Applications
+Python for Fun

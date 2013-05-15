@@ -1,0 +1,25 @@
+
+changed instore.php
+
+when purchase is saved, that book's soldout should be set to 1
+
+purchase php
+
+sales.php
+
+
+booklist.php fetch authors properly
+
+confirm.php
+
+confirmation.php
+
+
+//add prices to instore.php
+updateInstore
+
+instore
+
+transaction
+
+

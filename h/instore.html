@@ -1,0 +1,31 @@
+<?php
+
+<html>
+<head>
+<title>PESeBay</title>
+
+<style>
+
+</style>
+
+</head>
+
+<body>
+
+	<form id="instore" action="instore.php" method="post" >
+
+		<input id="secret_key" type="text" placeholder="Enter transaction id"  required/>	
+		<input id="usn"  type="text" placeholder="Enter usn" required />
+		<input type="submit" value="Get Books" onsubmit="getBooks()" /> 	
+	</form>        
+
+
+	<div id="results" >
+	
+	</div>
+
+</body>
+</html>
+
+
+

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+	<head>		
+		<title>PESeBay</title>
+		<style type="text/css">
+#header-class {
+	border-top: none !important;
+	border-bottom: 1px solid #AAA;	
+	text-align: left;
+	background-color: #CCC;
+	background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, whiteSmoke), color-stop(100%, #CCC));
+	background-image: -webkit-linear-gradient(whiteSmoke,#CCC);
+	background-image: -moz-linear-gradient(whiteSmoke,#CCC);
+	background-image: -o-linear-gradient(whiteSmoke,#CCC);
+	background-image: -ms-linear-gradient(whiteSmoke,#CCC);
+	background-image: linear-gradient(whiteSmoke,#CCC);		
+	width:100%;
+	height: 70px;
+	margin-top:-10px;	
+
+}
+#wrapper  h1{
+	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+	padding : 10px;
+	text-align : left;	
+	font-size :36px;
+	
+}
+
+#wrapper  h1 a {
+	text-decoration : none;
+	color: #833526;
+	font-weight : bold;
+	text-shadow:1px 1px 1px rgba(39, 95, 39, 0.11);;
+	-webkit-text-shadow:1px 2px 1px rgba(39, 95, 39, 0.11);;
+	-moz-text-shadow:1px 2px 1px rgba(39, 95, 39, 0.11);;
+	-o-text-shadow:1px 2px 1px rgba(39, 95, 39, 0.11);;
+}		
+body{
+background-color: white;
+background-image: -webkit-linear-gradient(top, white, #EEE);
+background-image: -moz-linear-gradient(top, white, #EEE);
+background-image: -ms-linear-gradient(top, white, #EEE);
+background-image: -o-linear-gradient(top, white, #EEE);
+background-image: linear-gradient(top, white, #EEE);	
+}
+		</style>
+          <link rel="stylesheet" href="../css/bootstrap/css/bootstrap.min.css">
+      <link rel="stylesheet" href="../css/bootstrap/css/bootstrap-responsive.min.css">
+
+      <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,300,400,700">
+
+            <link rel="stylesheet" href="../css/home.css">		
+	</head>
+	<body>
+		<header id="header-class" >
+			<div id="wrapper" >
+				<h1> 	<a href="http://gaming.alwaysdata.net/pesebay/p/home.php"> Books.inherit() </a> </h1>
+			</div>
+		</header>
+		
+    <div id="body-inner">
+      <div id="content-wrapper">
+            <div class="container">
+            	<p>
+                    Your purchase order has been acknowledged. We will get back to you soon. <br />
+            		Back to home <a href="http://gaming.alwaysdata.net/pesebay/p/home.php" > Home </a> <br />
+            	</p>
+            </div>  
+      </div>              
+      <div class="push"><!--//--></div>
+    </div>
+
+     <script src="../js/jquery.js"></script>
+</body>
+</html>

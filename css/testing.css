@@ -1,0 +1,22 @@
+.bcomplete_container{
+    border: 1px solid #ccc;
+    -webkit-box-shadow: 2px 2px 1px #333;
+    box-shadow: 2px 2px 1px #333;
+    -moz-box-shadow: 2px 2px 1px #333;
+    position: absolute;    
+    z-index: 1000;
+    background-color:#ccc;
+}
+.bcomplete_sub_container{
+    border-bottom: 1px solid #333;
+    padding: 5px;
+    color:black
+}
+.bcomplete_sub_container:hover{
+    color:red;
+    cursor: pointer;
+}
+#query{
+    width:250px;
+    height:20px;
+}

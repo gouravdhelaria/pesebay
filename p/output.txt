@@ -1,0 +1,415 @@
+HTTP/1.1 200 OK
+Date: Tue, 25 Dec 2012 09:14:30 GMT
+Server: Apache/2.2.22 (Ubuntu)
+X-Powered-By: PHP/5.3.10-1ubuntu3.4
+Set-Cookie: pesebay=e44046c4a7b760162016ce3278b6142f; expires=Wed, 25-Dec-2013 09:14:30 GMT; path=/; httponly
+Vary: Accept-Encoding
+Transfer-Encoding: chunked
+Content-Type: text/html
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+
+    <title>Welcome &mdash; Books.inherit()</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
+    <script type="text/javascript" src="../js/cart.js"></script>
+            <script type="text/javascript" src="../fancy/source/jquery.fancybox.js?v=2.0.6"></script>
+      <link rel="stylesheet" type="text/css" href="../fancy/source/jquery.fancybox.css?v=2.0.6" media="screen" />
+	<link rel="stylesheet" type="text/css" href="../css/nbook_info.css" />       
+	<link rel="stylesheet" type="text/css" href="../css/header.css" />	
+      <link rel="stylesheet" href="../js/autocomplete/db/themes/base/jquery.ui.all.css">
+      <script src="../js/autocomplete/db/ui/jquery.ui.core.js"></script>
+      <script src="../js/autocomplete/db/ui/jquery.ui.widget.js"></script>
+      <script src="../js/autocomplete/db/ui/jquery.ui.position.js"></script>
+      <script src="../js/autocomplete/db/ui/jquery.ui.autocomplete.js"></script>      
+      <script src="../css/bootstrap/js/bootstrap.js"></script>      
+      <script type="text/javascript">
+$(function() {
+    $( "#id_q" ).autocomplete({
+      source: "autocomplete_books.php",
+      scroll: true,
+      highlight: false,
+      minLength: 2
+    });
+  });
+      </script>  
+	<style type="text/css" >
+
+        .description {
+        line-height:2em !important;
+        ont-size:1.2em;
+        }
+        div.pwrapper{
+          margin-left:170px;
+        }
+        h4{
+          line-height: 0px;
+        }
+        div.mycart ol{
+          list-style:none;
+          /*margin:5px;
+          padding:5px;*/
+        }
+        div#cart_button{
+          display:none;
+        }
+        div#cart_button{
+          position:fixed;
+          top:87px;
+          right:65px;
+        }
+/*        div.mycart{
+          position:fixed;
+          top:28px;
+          right:155px;
+        }*/
+    </style>
+      <link rel="stylesheet" href="../css/bootstrap/css/bootstrap.min.css">
+      <link rel="stylesheet" href="../css/bootstrap/css/bootstrap-responsive.min.css">
+
+      <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,300,400,700">
+
+       <link rel="stylesheet" href="../css/home.css">
+          
+      </head>
+  <body class="body" id="search">
+	<header id="header-class" style="margin-top:-10px;">
+		<div id="wrapper" >
+			<h1> 	<a href="http://gaming.alwaysdata.net/pesebay/p/home.php"> Books.inherit() </a> </h1>
+		</div>
+	</header>
+  <!--  
+    <div id="body-inner">
+      <div id="content-wrapper">
+                <div class="container">
+            
+              <div class="row">
+    <div id="main-title" class="span4">
+      
+    </div>
+  </div>-->
+<div class="pwrapper">
+  <div class="row">
+    <div class="span12">
+      <div id="search-area" class="well">
+        <form class="form-search" method="GET" action="search.php">
+          <div class="control-group">
+            <label class="control-label visuallyhidden" for="id_q">Book Title</label>
+            <div class="controls">
+              <div id="search-box" class="input-append">
+                <input id="id_q" name="q" type="text" placeholder="Book Title" class="span11"><button class="btn" type="submit" name="submit" value="search"><i class="icon-big-search"></i><span class="visuallyhidden">Search</span></button>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<div id="cart_button">
+  <a href="#cart_data" class="btn btn-success" id="inline">My Cart</a>
+</div>
+<div id="data_cont" style="display:none;">
+<div class="mycart" id="cart_data">
+  <ol>
+    <li id="cart_info"></li>
+    <li><div id="space"></div></li>
+    <li><a href="checkout.php" class="btn btn-success" custom = "next" >Close Shopping and Buy These Books</a></li>
+  </ol>
+</div>
+</div>          <link rel="stylesheet" type="text/css" href="../css/bootstrap/css/bootstrap.min.css" />
+          <link rel="stylesheet" type="text/css" href="../css/book_info.css" /> 
+	  <script type="text/javascript">
+	  	$(document).ready(function(){
+	  	staticArrowTop = parseInt($("#arrowleftcontainer").css("top"));
+		  	showDetailsBool = false;
+		  	$("#info").css("height",Math.max(parseInt($("#info").css("height")),(parseInt($("#recommendationsContainer").css("height")) + 60)) + "px");
+	  	});
+
+		function fillDetails(id,name){
+			$("#details").html("");
+//			$("#loading").css("display","block");
+			showDetailsBool = true;
+			$("#detailsContainer").css("display","none");
+			$("#info").css("opacity","60%");										
+			$("#info").css("background-color","#FCFCFC");										
+			$("#leftBlock_"+id).css("background-color","white");										
+			$("#details").load("details.php",{'q' : encodeURIComponent(name)},function(){
+//				$("#loading").css("display","none");
+				$("#info").css("opacity","100%");										
+				$("#info").css("background-color","white");	
+				$("#leftBlock_"+id).css("background-color","");										
+				id="#leftBlock_"+id;
+				pos = $(id).offset();
+				currentTop = parseInt(pos.top) - parseInt($(id).css("height"));
+				var eTop = $(id).offset().top;
+	//  			currentTop = currentTop - $(id).height() * ( eTop - $(window).scrollTop()  ) / $("#detailsContainer").height();
+				// calculate the top position of the book list item wrt screen size.			
+				var percentEtop = 1 -((parseInt($(window).height()) - (parseInt($(id).offset().top) - parseInt($(window).scrollTop())))/ parseInt($(window).height()));
+	//  			currentTop = currentTop - $(id).height() * ( eTop - $(window).scrollTop()  ) / $("#detailsContainer").height();
+	  			currentTop = currentTop - percentEtop * currentTop;
+	  			arrowTop = parseInt($(id).position().top) + parseInt(staticArrowTop) - parseInt(currentTop);
+				$("#arrowleftcontainer").css("top",arrowTop + "px");
+				detailsHeight = parseInt($("#detailsContainer").height());
+				$("#detailsContainer").css("top",currentTop + "px");
+				$("#detailsContainer").css("display","block");
+			});
+		}
+		function colorStars(num){
+		}
+		function rateBook(num){
+		}
+		
+		function hideDetails(){
+			if(!showDetailsBool)
+			$("#detailsContainer").css("display","none");
+		}
+	  </script>
+            <div id="info" class="info span12">
+			<div id="recommendationsContainer" class="span5 offset6" >
+				<div id="recommendationsHeader">
+					<h4>Recommended Books:</h4>
+				</div>        			<div id="recommendationsContent"><ul><li><a href='search.php?q=Mastering+C%2B%2B&submit=search' >Mastering C++</a></li><li><a href='search.php?q=Natural+Language+Processing+in+Lisp&submit=search' >Natural Language Processing in Lisp</a></li><li><a href='search.php?q=C%2B%2B+Primer&submit=search' >C++ Primer</a></li><li><a href='search.php?q=Java+in+a+Nutshell&submit=search' >Java in a Nutshell</a></li><li><a href='search.php?q=The+Scheme+Programming+Language&submit=search' >The Scheme Programming Language</a></li><li><a href='search.php?q=Software+Developement&submit=search' >Software Developement</a></li><li><a href='search.php?q=Learn+Prolog+Now&submit=search' >Learn Prolog Now</a></li><li><a href='search.php?q=Developing+Games+in+Java&submit=search' >Developing Games in Java</a></li></ul></div>				</div>		<div id="leftBlock_42" class="left_block span6" data-animation="true" data-html="true" data-placement="right" data-trigger="hover" onmouseover="fillDetails(42,'Python Standard Library');" >
+	                <div class="book_info span3">
+				
+        	            <div class="book_header">
+        	                <h4>Python Standard Library</h4>
+        	            </div>
+			    <div class="author">
+        	                <span class="help-block">Authors: </span></div>			  <span class="rating_stars help-block">
+	                          Book Condition:
+	                          
+			  </span>                	      <div class="price">
+                	          <strong class="span2">Marked Price: 250 </strong>
+                	          <strong class="span3">Selling Price: 200 </strong>
+                	          <strong class="span2">Discount: 50 </strong>
+                	      </div>
+        		      <div class="links span4">
+        		          <span class="add_to_cart pull-right"><a href="#" class="btn btn-success cart" id = "42" >Add to cart</a></span>
+
+        		      </div>
+        		  </div>
+			  <div class="span2">
+				<div class="imageHolder"><img src="../images/no_image.gif" /></div>
+			  </div>
+			</div>			<div id="detailsContainer" class="span5 offset6">
+				<div id="arrowleftcontainer"><div id="arrowleft"></div><div id="arrowleftoverlapping"></div></div>
+				<div id="details" onmousein="showDetailsBool=true;" onmouseout="showDetailsBool=false;hideDetails();">
+					<img id="loading" src="../images/loading.gif"/>
+				</div>				
+			</div>
+		</div><script type='text/javascript'>$('#id_q').val('Python Standard Library')</script></body></html>HTTP/1.1 200 OK
+Date: Tue, 25 Dec 2012 09:14:31 GMT
+Server: Apache/2.2.22 (Ubuntu)
+X-Powered-By: PHP/5.3.10-1ubuntu3.4
+Set-Cookie: pesebay=90ff2dc051f13fd0518fe7d37194198e; expires=Wed, 25-Dec-2013 09:14:31 GMT; path=/; httponly
+Vary: Accept-Encoding
+Transfer-Encoding: chunked
+Content-Type: text/html
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+
+    <title>Welcome &mdash; Books.inherit()</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
+    <script type="text/javascript" src="../js/cart.js"></script>
+            <script type="text/javascript" src="../fancy/source/jquery.fancybox.js?v=2.0.6"></script>
+      <link rel="stylesheet" type="text/css" href="../fancy/source/jquery.fancybox.css?v=2.0.6" media="screen" />
+	<link rel="stylesheet" type="text/css" href="../css/nbook_info.css" />       
+	<link rel="stylesheet" type="text/css" href="../css/header.css" />	
+      <link rel="stylesheet" href="../js/autocomplete/db/themes/base/jquery.ui.all.css">
+      <script src="../js/autocomplete/db/ui/jquery.ui.core.js"></script>
+      <script src="../js/autocomplete/db/ui/jquery.ui.widget.js"></script>
+      <script src="../js/autocomplete/db/ui/jquery.ui.position.js"></script>
+      <script src="../js/autocomplete/db/ui/jquery.ui.autocomplete.js"></script>      
+      <script src="../css/bootstrap/js/bootstrap.js"></script>      
+      <script type="text/javascript">
+$(function() {
+    $( "#id_q" ).autocomplete({
+      source: "autocomplete_books.php",
+      scroll: true,
+      highlight: false,
+      minLength: 2
+    });
+  });
+      </script>  
+	<style type="text/css" >
+
+        .description {
+        line-height:2em !important;
+        ont-size:1.2em;
+        }
+        div.pwrapper{
+          margin-left:170px;
+        }
+        h4{
+          line-height: 0px;
+        }
+        div.mycart ol{
+          list-style:none;
+          /*margin:5px;
+          padding:5px;*/
+        }
+        div#cart_button{
+          display:none;
+        }
+        div#cart_button{
+          position:fixed;
+          top:87px;
+          right:65px;
+        }
+/*        div.mycart{
+          position:fixed;
+          top:28px;
+          right:155px;
+        }*/
+    </style>
+      <link rel="stylesheet" href="../css/bootstrap/css/bootstrap.min.css">
+      <link rel="stylesheet" href="../css/bootstrap/css/bootstrap-responsive.min.css">
+
+      <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,300,400,700">
+
+       <link rel="stylesheet" href="../css/home.css">
+          
+      </head>
+  <body class="body" id="search">
+	<header id="header-class" style="margin-top:-10px;">
+		<div id="wrapper" >
+			<h1> 	<a href="http://gaming.alwaysdata.net/pesebay/p/home.php"> Books.inherit() </a> </h1>
+		</div>
+	</header>
+  <!--  
+    <div id="body-inner">
+      <div id="content-wrapper">
+                <div class="container">
+            
+              <div class="row">
+    <div id="main-title" class="span4">
+      
+    </div>
+  </div>-->
+<div class="pwrapper">
+  <div class="row">
+    <div class="span12">
+      <div id="search-area" class="well">
+        <form class="form-search" method="GET" action="search.php">
+          <div class="control-group">
+            <label class="control-label visuallyhidden" for="id_q">Book Title</label>
+            <div class="controls">
+              <div id="search-box" class="input-append">
+                <input id="id_q" name="q" type="text" placeholder="Book Title" class="span11"><button class="btn" type="submit" name="submit" value="search"><i class="icon-big-search"></i><span class="visuallyhidden">Search</span></button>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<div id="cart_button">
+  <a href="#cart_data" class="btn btn-success" id="inline">My Cart</a>
+</div>
+<div id="data_cont" style="display:none;">
+<div class="mycart" id="cart_data">
+  <ol>
+    <li id="cart_info"></li>
+    <li><div id="space"></div></li>
+    <li><a href="checkout.php" class="btn btn-success" custom = "next" >Close Shopping and Buy These Books</a></li>
+  </ol>
+</div>
+</div>          <link rel="stylesheet" type="text/css" href="../css/bootstrap/css/bootstrap.min.css" />
+          <link rel="stylesheet" type="text/css" href="../css/book_info.css" /> 
+	  <script type="text/javascript">
+	  	$(document).ready(function(){
+	  	staticArrowTop = parseInt($("#arrowleftcontainer").css("top"));
+		  	showDetailsBool = false;
+		  	$("#info").css("height",Math.max(parseInt($("#info").css("height")),(parseInt($("#recommendationsContainer").css("height")) + 60)) + "px");
+	  	});
+
+		function fillDetails(id,name){
+			$("#details").html("");
+//			$("#loading").css("display","block");
+			showDetailsBool = true;
+			$("#detailsContainer").css("display","none");
+			$("#info").css("opacity","60%");										
+			$("#info").css("background-color","#FCFCFC");										
+			$("#leftBlock_"+id).css("background-color","white");										
+			$("#details").load("details.php",{'q' : encodeURIComponent(name)},function(){
+//				$("#loading").css("display","none");
+				$("#info").css("opacity","100%");										
+				$("#info").css("background-color","white");	
+				$("#leftBlock_"+id).css("background-color","");										
+				id="#leftBlock_"+id;
+				pos = $(id).offset();
+				currentTop = parseInt(pos.top) - parseInt($(id).css("height"));
+				var eTop = $(id).offset().top;
+	//  			currentTop = currentTop - $(id).height() * ( eTop - $(window).scrollTop()  ) / $("#detailsContainer").height();
+				// calculate the top position of the book list item wrt screen size.			
+				var percentEtop = 1 -((parseInt($(window).height()) - (parseInt($(id).offset().top) - parseInt($(window).scrollTop())))/ parseInt($(window).height()));
+	//  			currentTop = currentTop - $(id).height() * ( eTop - $(window).scrollTop()  ) / $("#detailsContainer").height();
+	  			currentTop = currentTop - percentEtop * currentTop;
+	  			arrowTop = parseInt($(id).position().top) + parseInt(staticArrowTop) - parseInt(currentTop);
+				$("#arrowleftcontainer").css("top",arrowTop + "px");
+				detailsHeight = parseInt($("#detailsContainer").height());
+				$("#detailsContainer").css("top",currentTop + "px");
+				$("#detailsContainer").css("display","block");
+			});
+		}
+		function colorStars(num){
+		}
+		function rateBook(num){
+		}
+		
+		function hideDetails(){
+			if(!showDetailsBool)
+			$("#detailsContainer").css("display","none");
+		}
+	  </script>
+            <div id="info" class="info span12">
+			<div id="recommendationsContainer" class="span5 offset6" >
+				<div id="recommendationsHeader">
+					<h4>Recommended Books:</h4>
+				</div>        			<div id="recommendationsContent"><ul><li><a href='search.php?q=Mastering+C%2B%2B&submit=search' >Mastering C++</a></li><li><a href='search.php?q=C%2B%2B+Primer&submit=search' >C++ Primer</a></li><li><a href='search.php?q=Java+in+a+Nutshell&submit=search' >Java in a Nutshell</a></li><li><a href='search.php?q=Using+C+in+software+design&submit=search' >Using C in software design</a></li><li><a href='search.php?q=The+Scheme+Programming+Language&submit=search' >The Scheme Programming Language</a></li><li><a href='search.php?q=Software+Developement&submit=search' >Software Developement</a></li><li><a href='search.php?q=Learn+Prolog+Now&submit=search' >Learn Prolog Now</a></li><li><a href='search.php?q=Developing+Games+in+Java&submit=search' >Developing Games in Java</a></li></ul></div>				</div>		<div id="leftBlock_35" class="left_block span6" data-animation="true" data-html="true" data-placement="right" data-trigger="hover" onmouseover="fillDetails(35,'Natural Language Processing in Lisp');" >
+	                <div class="book_info span3">
+				
+        	            <div class="book_header">
+        	                <h4>Natural Language Processing in Lisp</h4>
+        	            </div>
+			    <div class="author">
+        	                <span class="help-block">Authors: </span></div>			  <span class="rating_stars help-block">
+	                          Book Condition:
+	                          
+			  </span>                	      <div class="price">
+                	          <strong class="span2">Marked Price: 250 </strong>
+                	          <strong class="span3">Selling Price: 200 </strong>
+                	          <strong class="span2">Discount: 50 </strong>
+                	      </div>
+        		      <div class="links span4">
+        		          <span class="add_to_cart pull-right"><a href="#" class="btn btn-success cart" id = "35" >Add to cart</a></span>
+
+        		      </div>
+        		  </div>
+			  <div class="span2">
+				<div class="imageHolder"><img src="../images/no_image.gif" /></div>
+			  </div>
+			</div>			<div id="detailsContainer" class="span5 offset6">
+				<div id="arrowleftcontainer"><div id="arrowleft"></div><div id="arrowleftoverlapping"></div></div>
+				<div id="details" onmousein="showDetailsBool=true;" onmouseout="showDetailsBool=false;hideDetails();">
+					<img id="loading" src="../images/loading.gif"/>
+				</div>				
+			</div>
+		</div><script type='text/javascript'>$('#id_q').val('Natural Language Processing in Lisp')</script></body></html>
